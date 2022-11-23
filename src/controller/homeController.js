@@ -1,25 +1,19 @@
-import connection from '../configs/connectDB'
+import pool from '../configs/connectDB'
 
-let getHomepage = (req, res) => {
+let getHomepage = async(req, res) => {
     //logic
-    let data = []
-    connection.query(
-        'SELECT * FROM `user` ',
-        function(err, results) {
-            results.map((row) => {
-                data.push({
-                    id: row.id,
-                    email: row.email,
-                    address: row.address,
-                    firstName: row.firstName,
-                    lastName: row.lastName
-                })
-         
-            })
-        return  res.render('index.ejs',{ dataUser: data })
-        });
+    const [rows] = await pool.execute('SELECT * from user')
+    return  res.render('index.ejs',{ dataUser: rows })
+        
 }
 
+let getDetailPage = async(req, res) => {
+    let userId = req.params.id
+    let user =  await pool.execute('SELECT * FROM `user` WHERE `id` = ?', [userId])
+    return res.send(JSON.stringify(user[0]))
+}
+        
+
 module.exports = {
-    getHomepage
+    getHomepage, getDetailPage
 }
