@@ -28,3 +28,18 @@ body {
   background-color: #04AA6D;
   color: white;
 }
+.btnDetail a{
+  text-decoration: none;
+}
+
+.createUserContainer{
+  text-align: center;
+}
+
+.createUserContainer label{
+  display: block;
+}
+.btnSubmit{
+  margin-top: 10px;
+  cursor: pointer;
+}
