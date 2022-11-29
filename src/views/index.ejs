@@ -40,13 +40,19 @@
                         <td>
                             <%= dataUser[i].lastName%>
                         </td>
-                        <td>
+                        <td class="abc">
                             <button class="btnDetail" ><a href="/detail/user/<%= dataUser[i].id%>" >Detail</a></button>
-                            <button type="button" >Edit</button>
-                            <button type="button" >Delete</button>
-                        </td>
+                            <form action="/editUser/<%= dataUser[i].id%>" method="GET">
+                                <button type="submit" >Edit</button>
+                            </form>
+                            
 
-                        
+                            <form action="/deleteUser" method="POST">
+                                <input type="text" hidden value="<%= dataUser[i].id%>" name="userId">
+                                <button type="submit" >Delete</button>
+                             </form>
+
+                        </td> 
                     </tr>
                 <% } %>
               </tbody>
