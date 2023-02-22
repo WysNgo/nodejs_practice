@@ -55,3 +55,9 @@ body {
   margin-top: 10px;
   cursor: pointer;
 }
+.upload-file-container{
+  padding: 20px;
+}
+.upload-file-container label{
+  display: flex;
+}
