@@ -38,18 +38,27 @@
                         <td>
                             <%= dataUser[i].lastName%>
                         </td>
-                        <td class="abc">
-                            <button class="btnDetail" ><a href="/detail/user/<%= dataUser[i].id%>" >Detail</a></button>
-                            <form action="/editUser/<%= dataUser[i].id%>" method="GET">
-                                <button type="submit" >Edit</button>
-                            </form>
+                        
+                        <td >
+                            <div class="btnContainer">
+                                <div> 
+                                    <form class="frmData" action="">
+                                        <button class="btnDetail" ><a href="/detail/user/<%= dataUser[i].id%>" >Detail</a></button>
+                                    </form>
+                                </div>
+                                <div>
+                                    <form class="frmEdit" action="/editUser/<%= dataUser[i].id%>" method="GET">
+                                        <button class="btnEdit" type="submit" >Edit</button>
+                                    </form>
+                                </div>
+                                <div>
+                                    <form class="frmDel" action="/deleteUser" method="POST">
+                                        <input type="text" hidden value="<%= dataUser[i].id%>" name="userId">
+                                        <button class="btnDel" type="submit" >Delete</button>
+                                    </form>
+                                </div>  
+                            </div>
                             
-
-                            <form action="/deleteUser" method="POST">
-                                <input type="text" hidden value="<%= dataUser[i].id%>" name="userId">
-                                <button type="submit" >Delete</button>
-                             </form>
-
                         </td> 
                     </tr>
                 <% } %>

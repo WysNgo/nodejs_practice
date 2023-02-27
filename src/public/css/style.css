@@ -27,6 +27,25 @@ body {
   color: white;
 }
 
+.btnContainer{
+  display: flex;
+  gap: 15px;
+}
+
+.frmData{
+  margin: 0px;
+  padding: 0px;
+}
+.frmEdit{
+  margin: 0px;
+  padding: 0px;
+}
+
+.frmDel{
+  margin: 0px;
+  padding: 0px;
+}
+
 .btnDetail a {
   text-decoration: none;
 }
@@ -44,17 +63,6 @@ body {
   cursor: pointer;
 }
 
-.updateUserContainer {
-  padding: 20px;
-}
-
-.updateUserContainer label {
-  display: block;
-}
-.btnSave{
-  margin-top: 10px;
-  cursor: pointer;
-}
 .upload-file-container{
   padding: 20px;
 }
